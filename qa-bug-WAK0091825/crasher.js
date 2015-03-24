@@ -1,3 +1,5 @@
+var numberOfLinesInMyFile = 10;
+
 describe("My test", function () {
 	
 	it("is expected to open the 'resource.txt' file", function () {
@@ -12,7 +14,11 @@ describe("My test", function () {
 	});
 	
 	it("is NOT expected to crash", function () {
-		studio.currentEditor.selectByLineIndex(0, 0, 0, 10, true);
+		studio.currentEditor.selectByLineIndex(0, 0, 0, numberOfLinesInMyFile, true);
+	});
+	
+	it("is NOT expected to crash too, but...", function () {
+		studio.currentEditor.selectByLineIndex(0, 0, 0, numberOfLinesInMyFile + 1, true);
 	});
 	
 });
